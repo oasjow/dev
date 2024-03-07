@@ -6,6 +6,12 @@ class Rectangle {
         int width;
         int length;
     public:
+        // constructors
+        Rectangle()
+        { width = 1, length = 1; }
+
+        Rectangle(int input1, int input2)
+        { width = input1; length = input2;}
         // setters
         void set_width(int w)
         { width = w; }
