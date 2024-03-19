@@ -3,7 +3,19 @@
 #include"trapezoid.hpp"
 #include"flowerpot.hpp"
 
+void test_rectangle();
+void test_trapezoid();
+void test_flowerpot();
+
 int main() {
+    test_rectangle();
+    test_trapezoid();
+    test_flowerpot();
+
+    return 0;
+}
+
+void test_rectangle() {
     Rectangle* rect = new Rectangle;
     rect->set_width(5);
     rect->set_length(10);
@@ -12,14 +24,18 @@ int main() {
     std::cout << "Area: " << rect->get_area() << std::endl;
     std::cout << "Perimeter: " << rect->get_perimeter() << std::endl;
     delete rect;
+}
 
+void test_trapezoid() {
     Trapezoid* trap = new Trapezoid(5, 10, 5);
     std::cout << "Base 1: " << trap->get_base1() << std::endl;
     std::cout << "Base 2: " << trap->get_base2() << std::endl;
     std::cout << "Height: " << trap->get_height() << std::endl;
     std::cout << "Area: " << trap->find_area() << std::endl;
     delete trap;
+}
 
+void test_flowerpot() {
     FlowerPot* pot = new FlowerPot;
     pot->set_base(new Trapezoid(5, 10, 5));
     pot->set_flower_type("Rose");
@@ -30,6 +46,4 @@ int main() {
     std::cout << "Flower Type: " << pot->get_flower_type() << std::endl;
     std::cout << "Price: " << pot->get_price() << std::endl;
     delete pot;
-
-    return 0;
 }

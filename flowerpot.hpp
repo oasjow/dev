@@ -11,6 +11,7 @@ class FlowerPot {
 
     public:
     void set_base(Trapezoid* base);
+    void set_base(double base1, double base2, double height);
     void set_flower_type(std::string flower_type);
     void set_price(float price);
     Trapezoid* get_base() const;
