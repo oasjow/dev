@@ -1,0 +1,15 @@
+Trapezoid
+-----------------
+- base1 : double
+- base2 : double
+- height : double
+-----------------
++ Trapezoid() :
++ Trapezoid(base1 : double, base2 : double, height : double)
++ get_base1() : double
++ get_base2() : double
++ get_height() : double
++ set_base1(base1 : double) : void
++ set_base2(base2 : double) : void
++ set_height(height : double) : void
++ find_area() : double
