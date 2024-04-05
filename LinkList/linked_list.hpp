@@ -1,9 +1,11 @@
 #ifndef LINKED_LIST_HPP
 #define LINKED_LIST_HPP
 
-struct Node {
-    int data;
-    Node* next;
+class Node {
+    public:
+        int data;
+        Node* next;
+        ~Node();
 };
 
 class LinkedList {
@@ -17,6 +19,8 @@ class LinkedList {
         bool remove(int);
         bool remove_value(int);
         bool is_empty() const;
+        Node* get_head() const;
+        ~LinkedList();
 };
 
 #endif
