@@ -1,10 +1,19 @@
 #include"linked_list.hpp"
 
+Node::Node() {
+    data = 0;
+    next = nullptr;
+}
+
 Node::~Node() {
     if (next != nullptr) {
         delete next;
         next = nullptr;
     }
+}
+
+LinkedList::LinkedList() {
+    head = nullptr;
 }
 
 LinkedList::~LinkedList() {

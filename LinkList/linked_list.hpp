@@ -5,6 +5,7 @@ class Node {
     public:
         int data;
         Node* next;
+        Node();
         ~Node();
 };
 
@@ -20,6 +21,7 @@ class LinkedList {
         bool remove_value(int);
         bool is_empty() const;
         Node* get_head() const;
+        LinkedList();
         ~LinkedList();
 };
 
