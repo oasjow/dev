@@ -42,3 +42,25 @@ bool test_push_front() {
     //clean up
     return false;
 }
+
+bool test_is_empty() {
+    //setup
+
+    //execution
+
+    //validation
+
+    //clean up
+    return false;
+}
+
+bool test_size() {
+    //setup
+
+    //execution
+
+    //validation
+
+    //clean up
+    return false;
+}
