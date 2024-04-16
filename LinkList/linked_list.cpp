@@ -91,3 +91,30 @@ bool LinkedList::insert(int index, int in) {
     }
     return false;
 }
+
+bool LinkedList::remove(int index) {
+    if(index < 0) {
+        return false;
+    }
+    if(index == 0) {
+        Node* temp = head->next;
+        head->next = nullptr;
+        delete head;
+        head = temp;
+        return true;
+    }
+    Node* iter;
+    int count = 0;
+    for(iter = head; iter->next != nullptr; iter = iter->next) {
+        count++;
+        if (count == index) {
+            Node* temp = iter->next;
+            iter->next = temp->next;
+            temp->next = nullptr;
+            delete temp;
+            temp = nullptr;
+            return true;
+        }
+    }
+    return false;
+}

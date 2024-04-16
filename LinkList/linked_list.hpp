@@ -16,7 +16,7 @@ class LinkedList {
         int size() const;
         bool push_back(int);
         bool push_front(int);
-        bool insert(int , int);
+        bool insert(int, int);
         bool remove(int);
         bool remove_value(int);
         bool is_empty() const;
