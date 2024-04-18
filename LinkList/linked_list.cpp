@@ -120,6 +120,16 @@ bool LinkedList::remove(int index) {
 }
 
 bool LinkedList::remove_value(int value) {
+    if (head == nullptr) {
+        return false;
+    }
+    if (head->data == value) {
+        Node* temp = head->next;
+        head->next = nullptr;
+        delete head;
+        head = temp;
+        return true;
+    }
     Node* iter;
     for(iter = head; iter->next != nullptr; iter = iter->next) {
         if (iter->next->data == value) {
