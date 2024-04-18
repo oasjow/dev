@@ -130,6 +130,7 @@ bool test_size() {
 }
 
 bool test_remove() {
+    //setup
     LinkedList lst;
     lst.push_back(1);
     lst.push_back(2);
@@ -137,10 +138,12 @@ bool test_remove() {
     lst.push_back(4);
     lst.push_back(5);
 
+    //execution
     bool result1 = lst.remove(0);
     bool result2 = lst.remove(2);
     bool result3 = lst.remove(5);
 
+    //validation
     assert(result1 == true);
     assert(result2 == true);
     assert(result3 == false);
@@ -149,6 +152,7 @@ bool test_remove() {
     assert(lst.get_head()->next->data == 3);
     assert(lst.get_head()->next->next->data == 5);
 
+    //clean up
     cout << "remove test passed" << endl;
     return true;
 }
