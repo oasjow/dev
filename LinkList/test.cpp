@@ -128,4 +128,5 @@ void print_array(int* arr, int size) {
         cout << arr[i] << " ";
     }
     cout << endl;
+    delete[] arr;
 }
