@@ -118,3 +118,29 @@ bool LinkedList::remove(int index) {
     }
     return false;
 }
+
+bool LinkedList::remove_value(int value) {
+    Node* iter;
+    for(iter = head; iter->next != nullptr; iter = iter->next) {
+        if (iter->next->data == value) {
+            Node* temp = iter->next;
+            iter->next = temp->next;
+            temp->next = nullptr;
+            delete temp;
+            temp = nullptr;
+            return true;
+        }
+    }
+    return false;
+}
+
+int* LinkedList::to_array() const {
+    int* arr = new int[size()];
+    Node* iter;
+    int arr_index = 0;
+    for(iter = head; iter != nullptr; iter = iter->next) {
+        arr[arr_index] = iter->data;
+        arr_index++;
+    }
+    return arr;
+}

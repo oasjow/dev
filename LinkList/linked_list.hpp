@@ -20,6 +20,7 @@ class LinkedList {
         bool remove(int);
         bool remove_value(int);
         bool is_empty() const;
+        int* to_array() const;
         Node* get_head() const;
         LinkedList();
         ~LinkedList();

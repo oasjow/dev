@@ -11,10 +11,12 @@ bool test_size();
 bool test_insert();
 bool test_remove();
 bool test_remove_value();
+void print_array(int*, int);
 
 int main() {
     test_push_back();
     test_remove();
+    test_remove_value();
     cout << "All tests passed!" << endl;
     return 0;
 }
@@ -91,4 +93,39 @@ bool test_remove() {
     assert(lst.get_head()->next->next->data == 5);
 
     return true;
+}
+
+bool test_remove_value() {
+    //setup
+    LinkedList lst;
+    lst.push_back(1);
+    lst.push_back(2);
+    lst.push_back(3);
+    lst.push_back(3);
+    lst.push_back(4);
+    lst.push_back(5);
+    cout << "Before remove: " << endl;
+    print_array(lst.to_array(), lst.size());
+    cout << endl;
+
+    //execution
+    cout << "removing 3" << endl << endl;
+    bool result1 = lst.remove_value(3);
+
+    //validation
+    assert(result1 == true);
+    assert(lst.size() == 5);
+    cout << "After remove: " << endl;
+    print_array(lst.to_array(), lst.size());
+    cout << endl;
+
+    //clean up
+    return true;
+}
+
+void print_array(int* arr, int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
