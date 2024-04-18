@@ -144,3 +144,15 @@ int* LinkedList::to_array() const {
     }
     return arr;
 }
+
+int LinkedList::get(int index) const {
+    Node* iter;
+    int count = 0;
+    for(iter = head; iter != nullptr; iter = iter->next) {
+        if (count == index) {
+            return iter->data;
+        }
+        count++;
+    }
+    return -1;
+}
